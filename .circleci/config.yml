@@ -18,11 +18,11 @@ jobs:
           docker-password: DOCKER_PASS
       - docker/build:
           image: $DOCKER_IMAGE
-          tag: $DOCKER_TAG
+          tag: latest
       - docker/push:
           digest-path: /tmp/digest.txt
           image: $DOCKER_IMAGE
-          tag: $DOCKER_TAG
+          tag: latest
       - run:
           command: |
             echo "Digest is: $(</tmp/digest.txt)"
